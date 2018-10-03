@@ -309,3 +309,8 @@ function remove(){
     remove_action('woocommerce_before_shop_loop','woocommerce_catalog_ordering',30);
 }
 add_action('init','remove',20);
+
+function be_excerpt_more( $more ) {
+    return ' <a href="' . get_permalink() . '">Read More</a>';
+}
+add_filter( 'excerpt_more', 'be_excerpt_more', 20 );
